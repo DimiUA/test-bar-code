@@ -61,51 +61,38 @@
     <!-- Your main view, should have "view-main" class -->
     <div class="view view-main ios-edges">
       <!-- Page, data-name contains page name which can be used in callbacks -->
-      <div class="page" data-name="home">
+        <div class="page" data-name="home">
         <!-- Top Navbar -->
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="left">
-              <a href="#" class="link icon-only panel-open" data-panel="left">                
-                <i class="icon material-icons md-only">menu</i>
-              </a>
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <!-- <a href="#" class="link icon-only panel-open" data-panel="left">                
+                            <i class="icon material-icons md-only">menu</i>
+                        </a> -->
+                    </div>
+                    <div class="title sliding">BarCode Scanner</div>
+                    <!-- <div class="right">
+                        
+                    </div> -->
+                </div>
             </div>
-            <div class="title sliding">BarCode Scanner</div>
-            <div class="right">
-              <!-- <a href="#" class="link icon-only panel-open" data-panel="right">
-                <i class="icon f7-icons ios-only">menu</i>
-                <i class="icon material-icons md-only">menu</i>
-              </a> -->
-            </div>
-          </div>
-        </div>
-        
-        <!-- Scrollable page content-->
-        <div class="page-content">
-          <!-- <div class="block block-strong">
-            <p>Here is your blank Framework7 app. Let's see what we have here.</p>
-          </div> -->
 
-          <!-- <div class="block-title">Navigation</div> -->
-          <!-- <div class="list">
-             <ul>
-               <li>
-                 <a href="/about/" class="item-content item-link">
-                   <div class="item-inner">
-                     <div class="item-title">About</div>
-                   </div>
-                 </a>
-               </li>
-               <li>
-                 <a href="/form/" class="item-content item-link">
-                   <div class="item-inner">
-                     <div class="item-title">Form</div>
-                   </div>
-                 </a>
-               </li>
-             </ul>
-           </div>  --> 
-                
+            <!-- Additional "tabbar-labels" class -->
+            <div class="toolbar tabbar-labels toolbar-bottom-md">
+                <div class="toolbar-inner">
+                    <a href="#" class="tab-link tab-link-active">                              
+                        <i class="icon material-icons">home</i>                
+                        <span class="tabbar-label">Home</span>
+                    </a>                  
+                    <a href="#" class="tab-link logout">
+                        <i class="icon material-icons">directions_run</i>                
+                        <span class="tabbar-label">Logout</span>
+                    </a>
+                </div>
+            </div>
+        
+            <!-- Scrollable page content-->
+            <div class="page-content">
                 <form class="" id="my-form">
                     <div class="block-title">Search Form</div>
                     <div class="list no-hairlines" >         
@@ -117,7 +104,7 @@
                                         <div class="item-input-wrap with-icon-button-right">
                                             <input type="text" name="code" placeholder="Input code here or click on bar icon to scan bar code"/>
                                             <span class="input-clear-button"></span>
-                                            <div class="icon-button-right openBarCodeReader link"><i class="icon f7-icons">camera</i></div>
+                                            <a href="#" class="icon-button-right openBarCodeReader link"><i class="icon material-icons">center_focus_weak</i></a>
                                         </div>
                                         
                                     </div>
@@ -127,11 +114,10 @@
                     </div> 
                     <div class="block">
                         <button type="submit" class="col button button-raised button-fill button-round">Submit</button>
-                    </div>
-                
-                </form>
-          
+                    </div>                
+                </form>          
             </div>
+
         </div>
     </div>
 
@@ -152,7 +138,7 @@
                       <div class="item-input-wrap with-icon-button-right">
                         <input type="text" name="username" placeholder="Your username">
                         <span class="input-clear-button"></span>
-                        <div class="icon-button-right link openBarCodeReader"><i class="icon f7-icons">camera</i></div>
+                        <a href="#" class="icon-button-right link openBarCodeReader"><i class="icon material-icons">center_focus_weak</i></a>
                       </div>
                       
                     </div>

@@ -1,37 +1,38 @@
 
 document.addEventListener("deviceready", onDeviceReady, false ); 
+document.addEventListener("backbutton", backFix, false); 
 
 // Dom7
 var $$ = Dom7;
 
 // Framework7 App main instance
 var app  = new Framework7({
-  root: '#app', // App root element
-  id: 'io.framework7.testapp', // App bundle ID
-  name: 'BarCode Scanner', // App name
-  theme: 'auto', // Automatic theme detection
-  // App root data
-  data: function () {
-    return {
-      user: {
-        firstName: 'John',
-        lastName: 'Doe',
-      },
-    };
-  },
-  // App root methods
-  methods: {
-    helloWorld: function () {
-      app.dialog.alert('Hello World!');
+    root: '#app', // App root element
+    id: 'io.framework7.testapp', // App bundle ID
+    name: 'BarCode Scanner', // App name
+    theme: 'auto', // Automatic theme detection
+    // App root data
+    data: function () {
+        return {
+            user: {
+                firstName: 'John',
+                lastName: 'Doe',
+            },
+        };
     },
-  },
-  // App routes
-  routes: routes,
+      // App root methods
+    methods: {
+        helloWorld: function () {
+            app.dialog.alert('Hello World!');
+        },
+    },
+      // App routes
+    routes: routes,
 });
 
 // Init/Create main view
 var mainView = app.views.create('.view-main', {
-  url: '/'
+    url: '/'
 });
 
 
@@ -42,10 +43,8 @@ var mainView = app.views.create('.view-main', {
 
 // Login Screen Demo
 $$('#login-form').on('submit', function (e) {
-    e.preventDefault();  
-    
+    e.preventDefault();      
     login();
-
     return false;
 });
 
@@ -63,13 +62,21 @@ $$('#my-form').on('submit', function (e) {
     return false;
 });
 
-$$('.panel_menu').on('click', '.item-link', function(){
+/*$$('.panel_menu').on('click', '.item-link', function(){
     let id = this.getAttribute('id');
 
     switch (id){
         case 'logout':
             logout();
             break;
+    }
+});*/
+
+$$('.toolbar').on('click', '.tab-link', function(){
+    let link = $$(this);
+
+    if (link.hasClass('logout')) {
+        logout();
     }
 });
 
@@ -81,6 +88,15 @@ if (app.device.desktop) {
 
 
 
+
+
+
+
+
+
+
+
+
 function onDeviceReady(){ 
     //fix app images and text size
     if (window.MobileAccessibility) {
@@ -88,6 +104,17 @@ function onDeviceReady(){
     }
 
     login();
+}
+
+function backFix(event){
+    var page = mainView.router.currentRoute;  
+    if( page.name == "home"){         
+        app.dialog.confirm('Close App?', function () { 
+            navigator.app.exitApp();
+        });
+    }else{
+        mainView.router.back();
+    } 
 }
 
 
@@ -131,8 +158,6 @@ function loadPageDetails(code){
 }
 
 
-
-
 function openBarCodeReader(input){
     //console.log(input);
     if(window.device && cordova.plugins && cordova.plugins.barcodeScanner) {
@@ -162,6 +187,6 @@ function openBarCodeReader(input){
             }
         );
     }else{
-        app.dialog.alert('Your device not support this function');
+        app.dialog.alert('Your device does not support this function');
     }
 }
