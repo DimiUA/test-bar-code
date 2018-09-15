@@ -1,0 +1,16 @@
+/* Your app styles here */
+
+
+.with-icon-button-right {
+	padding-right: 36px;
+    box-sizing: border-box;
+}
+	.with-icon-button-right .input-clear-button{
+		right: 47px;
+	}
+	.icon-button-right{
+		position: absolute;
+	    top: 6px;
+	    bottom: auto;
+	    right: 5px;
+	}
