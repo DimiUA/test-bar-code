@@ -8,7 +8,7 @@ var $$ = Dom7;
 // Framework7 App main instance
 var app  = new Framework7({
     root: '#app', // App root element
-    id: 'io.framework7.testapp', // App bundle ID
+    id: 'com.ubs.barcodescanner', // App bundle ID
     name: 'BarCode Scanner', // App name
     theme: 'auto', // Automatic theme detection
     // App root data
@@ -42,7 +42,7 @@ var mainView = app.views.create('.view-main', {
 
 
 // Login Screen Demo
-$$('#login-form').on('submit', function (e) {
+$$('body').on('submit', '#login-form', function (e) {
     e.preventDefault();      
     login();
     return false;
@@ -53,13 +53,21 @@ $$('body').on('click', '.openBarCodeReader', function(){
     openBarCodeReader(input);
 });
 
-$$('#my-form').on('submit', function (e) {    
+$$('body').on('submit', '#my-form', function (e) {    
     e.preventDefault();  
 
     let code = $$('#my-form input[name="code"]').val();
     loadPageDetails(code);
  
     return false;
+});
+
+$$('body').on('click', '.tab-link', function(){
+    let link = $$(this);
+
+    if (link.hasClass('logout')) {
+        logout();
+    }
 });
 
 /*$$('.panel_menu').on('click', '.item-link', function(){
@@ -72,13 +80,7 @@ $$('#my-form').on('submit', function (e) {
     }
 });*/
 
-$$('.toolbar').on('click', '.tab-link', function(){
-    let link = $$(this);
 
-    if (link.hasClass('logout')) {
-        logout();
-    }
-});
 
 
 if (app.device.desktop) {
