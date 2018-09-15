@@ -138,16 +138,17 @@ function openBarCodeReader(input){
     if(window.device && cordova.plugins && cordova.plugins.barcodeScanner) {
         cordova.plugins.barcodeScanner.scan(
             function (result) {
-                  alert("We got a barcode\n" +
+                  /*alert("We got a barcode\n" +
                         "Result: " + result.text + "\n" +
                         "Format: " + result.format + "\n" +
-                        "Cancelled: " + result.cancelled);
+                        "Cancelled: " + result.cancelled);*/
+                input.val(result.text);
             },
             function (error) {
                 alert("Scanning failed: " + error);
             },
             {
-                  preferFrontCamera : true, // iOS and Android
+                  //preferFrontCamera : true, // iOS and Android
                   showFlipCameraButton : true, // iOS and Android
                   showTorchButton : true, // iOS and Android
                   torchOn: true, // Android, launch with the torch switched on (if available)
