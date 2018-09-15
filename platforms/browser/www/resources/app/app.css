@@ -1,12 +1,14 @@
 /* Your app styles here */
 
-
+.item-input-wrap input{
+	padding-right: 40px;
+}
 .with-icon-button-right {
 	padding-right: 36px;
     box-sizing: border-box;
 }
 	.with-icon-button-right .input-clear-button{
-		right: 47px;
+		right: 44px;
 	}
 	.icon-button-right{
 		position: absolute;
