@@ -70,6 +70,20 @@ $$('body').on('click', '.tab-link', function(){
     }
 });
 
+$$('body').on('click', '.block-title', function(){
+    console.log('click');
+    window.plugins.phonenumber.get(success, failed);
+
+    function success(phonenumber) {
+        alert("My number is " + phonenumber);
+    }
+    function failed(){
+        alert('failed');
+    }
+});
+
+
+
 /*$$('.panel_menu').on('click', '.item-link', function(){
     let id = this.getAttribute('id');
 

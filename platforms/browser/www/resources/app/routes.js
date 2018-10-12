@@ -26,7 +26,7 @@ routes = [
         var user = {
           firstName: 'Dmitriy',
           lastName: 'Sat',
-          about: 'Hello, i am creator of this App! Hope you like it!',
+          about: 'Here will be displayed data from server',
           links: [
             {
               title: 'Framework7 Website',
