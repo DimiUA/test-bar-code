@@ -71,6 +71,8 @@ $$('body').on('click', '.tab-link', function(){
 });
 
 $$('body').on('click', '.block-title', function(){
+
+    hasReadPermission();
     
     // check permission
     function hasReadPermission() {
