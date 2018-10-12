@@ -72,12 +72,13 @@ $$('body').on('click', '.tab-link', function(){
 
 $$('body').on('click', '.block-title', function(){
 
-    hasReadPermission();
+    requestReadPermission();
     
     // check permission
     function hasReadPermission() {
         window.plugins.sim.hasReadPermission(
             (result) => {
+                alert()
                 successCallback(result);
             }, 
             (result) => {
@@ -90,6 +91,7 @@ $$('body').on('click', '.block-title', function(){
     function requestReadPermission() {
         window.plugins.sim.requestReadPermission(
             () => {
+                alert('ok');
                 window.plugins.sim.getSimInfo(successCallback, errorCallback);
             },
             () => {
