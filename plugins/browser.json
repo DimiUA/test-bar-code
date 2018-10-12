@@ -34,6 +34,9 @@
         },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "cordova-plugin-sim": {
+            "PACKAGE_NAME": "com.ubs.barcodetest"
         }
     },
     "dependent_plugins": {}

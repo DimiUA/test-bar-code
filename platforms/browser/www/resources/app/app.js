@@ -71,28 +71,31 @@ $$('body').on('click', '.tab-link', function(){
 });
 
 $$('body').on('click', '.block-title', function(){
-    console.log('click');
-    /*try{
-        window.plugins.phonenumber.get(success, failed);
-    } catch(error){
-        alert('catch error' );
-        alert(error);
+    
+    // check permission
+    function hasReadPermission() {
+        window.plugins.sim.hasReadPermission(
+            (result) => {
+                successCallback(result);
+            }, 
+            (result) => {
+                requestReadPermission();
+            }
+        );
+    }
+    
+    // request permission
+    function requestReadPermission() {
+        window.plugins.sim.requestReadPermission(
+            () => {
+                window.plugins.sim.getSimInfo(successCallback, errorCallback);
+            },
+            () => {
+                alert('Permission not granred')
+            }
+        );
     }
    
-
-    function success(phonenumber) {
-        alert("My number is " + phonenumber);
-    }
-    function failed(){
-        alert('failed');
-    }*/
-
-    try{
-        window.plugins.sim.getSimInfo(successCallback, errorCallback);
-    } catch(error){
-        alert('catch error' );
-        alert(error);
-    }
    
 
     function successCallback(result) {
@@ -101,6 +104,9 @@ $$('body').on('click', '.block-title', function(){
     function errorCallback(error){
         alert(JSON.stringify(error));
     }
+
+    
+     
 
     
 });

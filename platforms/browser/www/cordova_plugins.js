@@ -113,6 +113,14 @@ module.exports = [
         "id": "cordova-plugin-camera.CameraProxy",
         "pluginId": "cordova-plugin-camera",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-sim/www/sim.js",
+        "id": "cordova-plugin-sim.Sim",
+        "pluginId": "cordova-plugin-sim",
+        "merges": [
+            "window.plugins.sim"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -126,7 +134,8 @@ module.exports.metadata =
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-buildinfo": "2.0.2",
     "cordova-plugin-splashscreen": "5.0.2",
-    "cordova-plugin-camera": "4.0.3"
+    "cordova-plugin-camera": "4.0.3",
+    "cordova-plugin-sim": "1.3.3"
 }
 // BOTTOM OF METADATA
 });
