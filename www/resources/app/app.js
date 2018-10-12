@@ -72,7 +72,13 @@ $$('body').on('click', '.tab-link', function(){
 
 $$('body').on('click', '.block-title', function(){
     console.log('click');
-    window.plugins.phonenumber.get(success, failed);
+    try{
+        window.plugins.phonenumber.get(success, failed);
+    } catch(error){
+        alert('catch error' );
+        alert(error);
+    }
+   
 
     function success(phonenumber) {
         alert("My number is " + phonenumber);
