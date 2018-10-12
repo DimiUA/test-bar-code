@@ -72,7 +72,7 @@ $$('body').on('click', '.tab-link', function(){
 
 $$('body').on('click', '.block-title', function(){
     console.log('click');
-    try{
+    /*try{
         window.plugins.phonenumber.get(success, failed);
     } catch(error){
         alert('catch error' );
@@ -85,7 +85,24 @@ $$('body').on('click', '.block-title', function(){
     }
     function failed(){
         alert('failed');
+    }*/
+
+    try{
+        window.plugins.sim.getSimInfo(successCallback, errorCallback);
+    } catch(error){
+        alert('catch error' );
+        alert(error);
     }
+   
+
+    function successCallback(result) {
+        alert(JSON.stringify(result) );
+    }
+    function errorCallback(error){
+        alert(JSON.stringify(error));
+    }
+
+    
 });
 
 

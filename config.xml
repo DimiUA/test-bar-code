@@ -49,8 +49,10 @@
     <plugin name="cordova-plugin-whitelist" source="npm" spec="1.2.1" />
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="5.0.2" />
     <plugin name="cordova-plugin-camera" source="npm" spec="4.0.3"  />
+    <plugin name="cordova-plugin-sim" source="npm" />
+    
     <plugin spec="https://github.com/phonegap/phonegap-mobile-accessibility.git" source="git" />
-    <plugin spec="https://github.com/oneminutedistraction/phonenumber.git" source="git" />
+    <!-- <plugin spec="https://github.com/oneminutedistraction/phonenumber.git" source="git" /> -->
 
     <platform name="ios">
         <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
